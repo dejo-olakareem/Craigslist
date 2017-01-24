@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+	include SessionHelper
+
+
 	def new
 		@user = User.new
 	end
@@ -8,7 +11,8 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to root_path
+			login(@user)
+			redirect_to user_path(@user)
 		else
 			flash[:error] = "An error occured"
 			render "new"
@@ -23,7 +27,7 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:username, :email, :password_hash)
+    params.require(:user).permit(:username, :email, :password)
   end
 
 

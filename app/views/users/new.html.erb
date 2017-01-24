@@ -1,17 +1,22 @@
 <%= form_for :user, url:{action: "create"} do |f| %>
   <p>
-    <%= f.label :Username %><br>
-    <%= f.text :username %>
+    <%= f.label "Username" %><br>
+    <%= f.text_field :username %>
   </p>
  
   <p>
-    <%= f.label :email %><br>
-    <%= f.text :email %>
+    <%= f.label "Email" %><br>
+    <%= f.text_field :email %>
   </p>
 
   <p>
-    <%= f.label :password %><br>
-    <%= f.password :password_hash %>
+    <%= f.label "Password" %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label "password_confirmation" %><br>
+    <%= f.password_field :password_confirmation %>
   </p>
  
   <p>

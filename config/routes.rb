@@ -6,11 +6,19 @@ Rails.application.routes.draw do
 
 
 
-  get "/users/new" => "users#new"
+  # get "/users/new" => "users#new"
   
-  post "/users" => "users#create"
+  # post "/users" => "users#create"
 
-  get "/users/:id" => "users#show"
+  # get "/users/:id" => "users#show"
+
+  resources :users
+
+  get "/login" => "session#new"
+  post "/login" => "session#create"
+  get "/logout" => "session#destroy"
+  
+
 
   root 'welcome#index'
 

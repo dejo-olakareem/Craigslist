@@ -1,8 +1,8 @@
 <% if current_user %>
 	<a href="/users/<%=current_user.id%>"><%= current_user.username%></a>
-	<%= link_to 'Logout', controller: 'sessions', action: "logout" %>
+	<%= link_to 'Logout', logout_path %>
 <% else %>
-	<%= link_to 'Login', controller: 'sessions', action: "login" %>
+	<%= link_to 'Login', controller: 'session', action: "new" %>
 	<%= link_to 'Register', controller: 'users', action: "new" %>
 <% end %>
 

@@ -1,0 +1,20 @@
+<%= form_for :user, url:{action: "create"} do |f| %>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text :username %>
+  </p>
+ 
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password :password_hash %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

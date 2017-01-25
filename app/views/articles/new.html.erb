@@ -1,0 +1,21 @@
+<%= form_for [@category, @article], url: {action: "create"} do |f| %>
+<%= f.hidden_field :category_id, value: @category.id %>
+  <p>
+    <%= f.label "Description" %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label "Condition" %><br>
+    <%= f.text_field :conditon %>
+  </p>
+
+  <p>
+    <%= f.label "Price" %><br>
+    <%= f.text_field :price %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

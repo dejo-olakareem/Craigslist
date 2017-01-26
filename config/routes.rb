@@ -23,8 +23,8 @@ Rails.application.routes.draw do
 	# end 
 
 
-	resources :categories, only: :index do 
-  	resources :articles
+	resources :categories, only: [:index, :show] do 
+  	resources :articles, shallow: true
 	end
 
   root 'welcome#index'

@@ -3,8 +3,7 @@
 
 <ul>
 	<% @category.articles.each do |article| %>
-			<h1><%= article.description %></h1>
-			<%= link_to 'Show', article_path(article) %>
+			<h1> <a href="/articles/<%=article.id%>"><%= article.description %></a></h1>
 	<% end %>
 </ul>
 

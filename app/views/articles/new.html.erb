@@ -1,5 +1,5 @@
-<%= form_for [@category, @article], url: {action: "create"} do |f| %>
-<%= f.hidden_field :category_id, value: @category.id %>
+<%= form_for [@category, @article], url: category_articles_path do |f| %>
+<%#= f.hidden_field :category_id, value: @category.id %>
   <p>
     <%= f.label "Description" %><br>
     <%= f.text_field :description %>

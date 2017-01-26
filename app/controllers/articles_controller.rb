@@ -8,9 +8,13 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end
 
+	def edit
+  	@article = Article.find(params[:id])
+	end
+
 	def create
 		@category = Category.find(params[:category_id])
-		
+
 		@article = Article.new(article_params)
 		if @article.save
 			redirect_to category_path(@category)
@@ -21,12 +25,9 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		
+		@article = Article.find(params[:id])
 	end
 
-	def edit
-		
-	end
 
 	def destroy
 		

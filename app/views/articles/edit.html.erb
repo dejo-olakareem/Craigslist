@@ -1,7 +1,6 @@
 <h1>Editing article</h1>
  
-<%= form_for [@category, @article], url: article_path(@article), method: :patch do |f| %>
-<%#= f.hidden_field :category_id, value: @category.id %>
+<%= form_for  @article , method: :patch do |f| %>
  
   <p>
     <%= f.label "Description" %><br>

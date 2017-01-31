@@ -1,26 +1,5 @@
 <h1>Editing article</h1>
  
-<%= form_for  @article , method: :patch do |f| %>
- 
-  <p>
-    <%= f.label "Description" %><br>
-    <%= f.text_field :description %>
-  </p>
- 
-  <p>
-    <%= f.label "Condition" %><br>
-    <%= f.text_area :conditon %>
-  </p>
- 
-  <p>
-    <%= f.label "Price" %><br>
-    <%= f.text_area :price %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>
+<%= render "form" %>
  
 <%= link_to 'Back', article_path %>

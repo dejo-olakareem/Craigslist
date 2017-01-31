@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+	# before_action :all_articles, only: [:index, :create]
+	# respond_to :html, :js
+
 	def index
 		@articles = Article.all
 	end
@@ -6,6 +9,11 @@ class ArticlesController < ApplicationController
 	def new
 		@category = Category.find(params[:category_id])
 		@article = Article.new
+
+		respond_to do |format|
+	    format.html
+	    format.js {}
+  	end
 	end
 
 	def edit
@@ -34,6 +42,11 @@ class ArticlesController < ApplicationController
   	@article.destroy
  
   	redirect_to categories_path
+
+  	respond_to do |format|
+	    format.html
+	    format.json
+  	end
 	end
 
 	def update

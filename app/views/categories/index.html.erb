@@ -2,13 +2,12 @@
 
 <table>
   <tr>
-    <th>Title</th>
+    <th><h1>Title</h1></th>
   </tr>
  
   <% @category.each do |category| %>
     <tr>
-      <td><%= category.title %></td>
-      <td><%= link_to 'Show', category_path(category) %></td>
+      <td> <h3><a href="/categories/<%=category.id%>"><%= category.title %></a></h3></td>
     </tr>
   <% end %>
 </table>

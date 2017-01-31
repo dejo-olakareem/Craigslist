@@ -1,10 +1,14 @@
+<%= form_tag(category_path(@category), method: :get) do %>
+  <%= text_field_tag :article, params[:article] ,id: "search_term"%>
+  <%= submit_tag 'Search',name: nil %>
+<% end %>
+
 <p>All articles that belongs to <%=@category.title%> </p>
 
 
 <ul>
 	<% @category.articles.each do |article| %>
-			<h1><%= article.description %></h1>
-			<%= link_to 'Show', article_path(article) %>
+			<h1> <a href="/articles/<%=article.id%>"><%= article.description %></a></h1>
 	<% end %>
 </ul>
 
@@ -12,3 +16,5 @@
 
 
 <%= link_to 'Create article', new_category_article_path(@category) %>
+
+

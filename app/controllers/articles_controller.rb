@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
 	def create
 		@category = Category.find(params[:category_id])
 
-		@article = Article.new(article_params)
+		@article = @category.articles.create(article_params)
 		if @article.save
 			redirect_to category_path(@category)
 		else
@@ -30,11 +30,20 @@ class ArticlesController < ApplicationController
 
 
 	def destroy
-		
+		@article = Article.find(params[:id])
+  	@article.destroy
+ 
+  	redirect_to categories_path
 	end
 
 	def update
-		
+		@article = Article.find(params[:id])
+ 
+	  if @article.update(article_params)
+	    redirect_to article_path(@article)
+	  else
+	    render 'edit'
+	  end
 	end
 
 	private
